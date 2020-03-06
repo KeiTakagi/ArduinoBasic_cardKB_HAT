@@ -5,7 +5,7 @@
     Reference source:https://github.com/robinhedwards/ArduinoBASIC
 
     @author Kei Takagi
-    @date 2019.11.26
+    @date 2020.03.06
 
     Copyright (c) 2019 Kei Takagi
 
@@ -17,24 +17,24 @@
 #include "Arduino.h"
 
 //OLED_DISPLAY 0...NORMAL 1...REVERSE
-#define OLED_DISPLAY 0
+#define OLED_DISPLAY 1
 
 #define WIRE_BUFMAX 32
 #define OLED_ADDR   0x3C
 
 #define OLED_WIDTH  128
-#define OLED_HEIGHT 32
-//#define OLED_HEIGHT 64
+//#define OLED_HEIGHT 32
+#define OLED_HEIGHT 64
 
 #define OLED_COLMAX 21
-#define OLED_ROWMAX 4
-//#define OLED_ROWMAX 8
+//#define OLED_ROWMAX 4
+#define OLED_ROWMAX 8
 
 #define BLACK       0 ///< Draw 'off' pixels
 #define WHITE       1 ///< Draw 'on' pixels
 #define INVERSE     2 ///< Invert pixels
 
-class SSD1306ASCII : public Print {
+class SSD1306ASCII {
  public:
   void clear();
   void init();
@@ -42,9 +42,9 @@ class SSD1306ASCII : public Print {
   uint8_t col() {return col_;}
   uint8_t row() {return row_;}
   void setCursor(uint8_t col, uint8_t row);
-  void setimg(const uint8_t* c);
+  void setImg(const uint8_t* c);
   void commandList(const uint8_t *c, uint8_t n);
-  size_t write(uint8_t c);
+  size_t write(const uint8_t c);
   size_t write(const char* s);
  private:
   // cursor position
