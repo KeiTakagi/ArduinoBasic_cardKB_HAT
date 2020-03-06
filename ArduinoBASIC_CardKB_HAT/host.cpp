@@ -120,7 +120,7 @@ void host_showBuffer() {
         char c = screenBuffer[y * OLED_COLMAX + x];
         if (c < 0x20) c = ' ';
         if (x == curX && y == curY && inputMode && flash) c = 0x7f; //Cursor blink
-        oled.print(c);
+        oled.write(c);
       }
       lineDirty[y] = 0;
     }
@@ -338,10 +338,6 @@ void host_loadProgram() {
 
 void host_LED(uint8_t r,uint8_t g,uint8_t b){
   flashOn(r,g,b);
-}
-void host_Img(uint8_t x,uint8_t y,uint8_t *imgBuff){
-  oled.setCursor(x,y);
-  oled.setimg(imgBuff);
 }
 
 //-----------------------------------------------------------------------------
