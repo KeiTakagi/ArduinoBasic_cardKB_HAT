@@ -3,22 +3,22 @@
     @brief cardKeyboard
 
     @author Kei Takagi
-    @date 2019.12.08
+    @date 2020.03.06
 
     Copyright (c) 2019 Kei Takagi
 */
 #ifndef _CARDKB_HAT_H
 #define _CARDKB_HAT_H
 
-#define NUMPIXELS      1
-#define LEDPIN        13
+#define NUMPIXELS       1
+#define LEDPIN          13
 #define LONGPRESSEDTIME 15
 
 #define shiftPressed (PIND & 0x01 ) == 0x00
 #define fnPressed    (PIND & 0x01 ) == 0x00
 
-//       d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d14 d15 
-//A3:     1  2  3  4  5  6  7  8  9  0   
+//       d0 d1 d2 d3 d4 d5 d6 d7 d8 d9 d10 d11 d12 d14 d15
+//A3:     1  2  3  4  5  6  7  8  9  0
 //A2:     q  w  e  r  t  y  u  i  o  p ESC   +   : DEL   ,
 //A1:    SH  a  s  d  f  g  h  j  k  l   {   <   /   '   \
 //A0:    FN SP  z  x  c  v  b  n  m  ?   |   [   ]     ENT
@@ -68,8 +68,8 @@ const uint8_t PROGMEM KeyMap[60][5] =
   { '{', '}', '}',  0 ,  0 },//{/}
   { '<', '>', '>',  0 ,  0 },//</>
   { '/', '_', '_',  0 ,  0 },////_
-  { '\'','\"','\"', 0 ,  0 },//'/"
-  { '\\','=', '=',  0 ,  0 },//\/=
+  { '\'', '\"', '\"', 0 ,  0 }, //'/"
+  { '\\', '=', '=',  0 ,  0 }, //\/=
   {  0 ,  0 ,  0 ,  0 ,  0 },//fn key
   { ' ', ' ', ' ', 175, 175},//space
   { 'z', 'Z', 'Z', 166, 166},//z
@@ -85,7 +85,7 @@ const uint8_t PROGMEM KeyMap[60][5] =
   { ']', 183, 183, 165, 165},//RIGHT
   {  0 ,  0 ,  0 ,  0 ,  0 },//no key
   { 13 , 13 ,  13, 163, 163} //enter
-//  {  9 ,  9 ,  9 140, 140} //tab *
+  //  {  9 ,  9 ,  9 140, 140} //tab *
 };
 //Port D (Pin 0-7) 7 6 5 4 3 2 1 0
 const uint8_t PROGMEM pinDmap[] = {
